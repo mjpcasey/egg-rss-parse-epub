@@ -42,21 +42,29 @@ npm init egg --type=ts
 3.配置定时发送邮件的时间，默认每天
 4.可选设置封面
 5.可选配置定时删除几天前的
+6.解析 rss-parse  
+7.解析 小说
+8.解析 文章
 #### 定时任务查看模块
 1.看每天的解析情况
 2.可下载相应的书籍
 3.可在线阅读
 #### 后台：
-定时任务
-1. 根据列表定时检查链接，查看博客是否更新（diff语法）
-2. 解析rss
-3. 定时生产书籍
-4. 搭建lowdb 
-
+> 定时任务
+-  根据列表定时检查链接，查看博客是否更新（diff语法）
+- [x] 解析rss
+-  定时生产书籍
+   - 生产书籍 epub
+        - 打包zip, ncx,opf,css,xml,mimetype等文件
+- [x] 搭建lowdb
+> 接口
+- [] 在线阅读 epub 渲染到html里面可以阅读，或者发到邮件里去
+- [] 添加rss链接模块
+- [] 查看下载eoub
 ### 选型：
-- 前端：next.js（react）, 部署docker
-- 后端：egg.js, 部署docker
-   - 解析rss-parse    
+- 前端：next.js 或者 react+ant
+- 后端：egg.js
 - 流量： nginx
 - 数据库：lowdb
+- docker , ks8部署
 
