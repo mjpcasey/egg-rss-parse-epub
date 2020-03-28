@@ -37,7 +37,7 @@ module.exports = {
         await ctx.service.rss.rss_write(rssArray);
         // console.log(JSON.stringify(rssArray))
         // 转成equb
-
+        await ctx.service.epub.parseRss(rssArray);
         // 订阅邮件发送
         return rssArray;
     },

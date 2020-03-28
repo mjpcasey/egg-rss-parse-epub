@@ -42,7 +42,7 @@ npm init egg --type=ts
 3.配置定时发送邮件的时间，默认每天
 4.可选设置封面
 5.可选配置定时删除几天前的
-6.解析 rss-parse  
+6.解析 rss
 7.解析 小说
 8.解析 文章
 #### 定时任务查看模块
@@ -54,7 +54,7 @@ npm init egg --type=ts
 -  根据列表定时检查链接，查看博客是否更新（diff语法）
 - [x] 解析rss
 -  定时生产书籍
-   - 生产书籍 epub
+   - js制作epub ： [](https://www.ibm.com/developerworks/cn/xml/tutorials/x-epubtut/index.html)
         - 打包zip, ncx,opf,css,xml,mimetype等文件
 - [x] 搭建lowdb
 > 接口

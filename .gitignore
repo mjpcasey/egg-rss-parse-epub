@@ -10,7 +10,7 @@ logs/
 *.swp
 *.lock
 !.autod.conf.js
-
+!app/public/**/*.js
 app/**/*.js
 test/**/*.js
 config/**/*.js

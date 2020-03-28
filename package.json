@@ -19,7 +19,10 @@
     "ci": "npm run lint && npm run cov && npm run tsc",
     "autod": "autod",
     "lint": "eslint . --ext .ts",
-    "clean": "ets clean"
+    "clean": "ets clean",
+    "webbuild": "cd web && set NODE_ENV=production&&webpack -p --config webpack.pro.js",
+    "init": "yarn install && cd web && yarn install",
+    "webstart": "cd web && webpack-dev-server --devtool eval --hot --inline --open --progress --colors --config webpack.dev.js"
   },
   "dependencies": {
     "egg": "^2.6.1",
