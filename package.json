@@ -20,6 +20,7 @@
     "autod": "autod",
     "lint": "eslint . --ext .ts",
     "clean": "ets clean",
+    "init": "yarn install && cd web && yarn install",
     "build": "cd web && cross-env NODE_ENV=production webpack --progress --config webpack.prod.js",
     "stats": "cd web && cross-env NODE_ENV=production webpack --progress --config webpack.prod.js --json > stats.json",
     "dll": "cd web && cross-env NODE_ENV=production webpack --config webpack.dll.js",
