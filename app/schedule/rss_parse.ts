@@ -26,18 +26,17 @@
 
 module.exports = {
     schedule: {
-        interval: '1m', // 120 分钟间隔
+        interval: '1m', // 1 分钟间隔
         type: 'all', // 指定所有的 worker 都需要执行
         immediate: false, //项目启动就执行一次定时任务
     },
     async task(ctx) {
         // 查看rss表
-        let rssArray:any = await ctx.service.rss.rss_parse();
+        let rssArray:Array<Object> = await ctx.service.rss.rssParse();
         // 判断更新时间
-        await ctx.service.rss.rss_write(rssArray);
-        // console.log(JSON.stringify(rssArray))
+        await ctx.service.rss.rssWrite(rssArray);
         // 转成equb
-        await ctx.service.epub.parseRss(rssArray);
+        await ctx.service.epub.rssParseEpub(rssArray);
         // 订阅邮件发送
         return rssArray;
     },

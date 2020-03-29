@@ -8,7 +8,7 @@ export default () => {
       agent:true
     },
     'rssParser':{
-      timeout: 5000,
+      timeout: 10000,
       app:true,
       agent:true
     }

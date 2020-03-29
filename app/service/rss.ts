@@ -9,7 +9,7 @@ export default class Rss extends Service {
     /**
      * 解析rss链接
      */
-    public async rss_parse():Promise<Array<Object>>{
+    public async rssParse():Promise<Array<Object>>{
         let links:Array<links> = this.ctx.app.lowdb.model('links').find();
         let arr:Array<any> = [];
         for(let item of links){
@@ -17,8 +17,9 @@ export default class Rss extends Service {
                 this.logger.info('parse url :' +item.link);
                 try{
                     let feed = await this.ctx.app.rssParser.parseURL(item.link);
-                    if(feed && feed.lastBuildDate && (!item.lastDate || new Date(feed.lastBuildDate) > new Date(item.lastDate))){
+                    if(true || feed && feed.lastBuildDate && (!item.lastDate || new Date(feed.lastBuildDate) > new Date(item.lastDate))){
                         let data:any = {
+                            name: item.name,
                             link: feed.link,
                             title: feed.title,
                             lastBuildDate: feed.lastBuildDate
@@ -53,7 +54,7 @@ export default class Rss extends Service {
     /**
      * 覆盖写入每天
      */
-    public async rss_write(arr:Array<Object>){
+    public async rssWrite(arr:Array<Object>){
         if(arr && arr.length)
         await this.ctx.app.lowdb.model('date_'+ moment().format('Y-M-D')).removeAll().add(arr);
     }
