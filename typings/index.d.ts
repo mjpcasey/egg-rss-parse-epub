@@ -56,3 +56,12 @@ export class links{
 
 declare module moment{}
 declare module "epub-press-js"{}
+
+
+class rssArr {
+    link:String;
+    name:String;
+    title:String;
+    content:Array<any>;
+    lastBuildDate:String;
+}

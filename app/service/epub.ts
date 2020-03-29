@@ -1,19 +1,12 @@
 import {Service} from 'egg';
 import * as path from "path";
-// const cheerio = require('cheerio');
-// const request = require('sync-request');
 const fs = require('fs');
 const cmd = require('node-cmd');
-// const process = require('process');
 const ejs = require('ejs');
+import {rssArr} from '../../typings';
+
 // const EpubPress = require('epub-press-js'); // https://www.npmjs.com/package/epub-press-js
-class rssArr {
-    link:String;
-    name:String;
-    title:String;
-    content:Array<any>;
-    lastBuildDate:String;
-}
+// const cheerio = require('cheerio');
 /*
  * Rss Service
  */
@@ -42,13 +35,15 @@ export default class Epub extends Service {
      * 初始化
      */
     private init(name:String) {
-        // temp目录
+        // 输出目录
         this.outPath = path.join(__dirname,"../../run/out/"+name);
+        // 复制模版
         this.copyPath = path.join(__dirname,"../public");
-
+        // temp目录
         this.tempPath = path.join(__dirname,"../../run/temp/");
         this.contentPath = path.join(this.tempPath,"./OEBPS/content.ejs");
         this.contentOpfPath = path.join(this.tempPath,"./OEBPS/content.opf");
+        // 当前内容
         this.content = [];
     }
 
@@ -102,13 +97,19 @@ export default class Epub extends Service {
      * 处理页面
      */
     private page(){
-
+        //  把内容根据ejs渲染成html放到page里面
     }
     /**
      * 处理图片
      */
     private image(){
+        // 加载渲染图片的链接出来
 
+        // 请求图片
+
+        // 把图片放在image里
+
+        // 替换掉链接里面的图片地址
     }
     /**
      * 处理封面
@@ -118,27 +119,6 @@ export default class Epub extends Service {
     }
     /**
      * 打包成epub
-     */
-    // private static generate(name){
-    //     let outPath = path.join(__dirname,"../../run/out/"+name);
-    //     let articles = fs.readdirSync('./out/OEBPS/Text');
-    //     for(let i = 0; i < articles.length; i++)
-    //     {
-    //         let fname = articles[i];
-    //         zip.file('OEBPS/Text/' + fname, fs.readFileSync('./out/OEBPS/Text/' + fname));
-    //     }
-    //
-    //     let images = fs.readdirSync('./out/OEBPS/Images');
-    //     for(let i = 0; i < images.length; i++)
-    //     {
-    //         let fname = images[i];
-    //         zip.file('OEBPS/Images/' + fname, fs.readFileSync('./out/OEBPS/Images/' + fname));
-    //     }
-    // }
-
-    /**
-     * 打包成epub
-     * @param name
      */
     private async zipCmd(){
 

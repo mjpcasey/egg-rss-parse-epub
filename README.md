@@ -1,6 +1,5 @@
-# hackernews-async-ts
-
-[Hacker News](https://news.ycombinator.com/) showcase using typescript && egg
+# egg-rss-epub
+ts+egg+rss+cmd+ejs+react+ant
 
 ## QuickStart
 
