@@ -41,11 +41,10 @@ $ open http://localhost:7001/
 > 接口
 - [] 在线阅读 epub 渲染到html里面可以阅读，或者发到邮件里去
 - [] 添加rss链接模块
-- [] 查看下载eoub
+- [] 查看下载epub
 ### 选型：
-- 前端：next.js 或者 react+ant
+- 前端：react+ant
 - 后端：egg.js
-- 流量： nginx
 - 数据库：lowdb
 - docker , ks8部署
 
