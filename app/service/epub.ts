@@ -30,7 +30,7 @@ export default class Epub extends Service {
             await this.image();
             await this.cover();
             await this.zipCmd();
-            // await this.removeDir();
+            await this.removeDir();
         }
     }
     /**
