@@ -17,8 +17,8 @@ export default class Epub extends Service {
     public content;
     public contentEjsPath;
     public contentOpfPath;
-    public pageEjsPath;
     public pagePath;
+    private name: String;
     public async rssParseEpub (rssArray:Array<rssArr>){
         // 打包目录
         // 分批订阅
@@ -26,7 +26,6 @@ export default class Epub extends Service {
             await this.init(item.name);
             await this.copy();
             await this.contentEjs(item);
-            await this.page();
             await this.image();
             await this.cover();
             await this.zipCmd();
@@ -37,16 +36,16 @@ export default class Epub extends Service {
      * 初始化
      */
     private init(name:String) {
+        this.name = name;
         // 输出目录
-        this.outPath = path.join(__dirname,"../../run/out/"+name);
+        this.outPath = path.join(__dirname,"../../run/out/");
         // 复制模版
-        this.copyPath = path.join(__dirname,"../public");
+        this.copyPath = path.join(__dirname,"../public/");
+        this.contentEjsPath = path.join(this.copyPath,"./ejs/content.ejs");
         // temp目录
         this.tempPath = path.join(__dirname,"../../run/temp/");
-        this.contentEjsPath = path.join(this.tempPath,"./OEBPS/content.ejs");
-        this.contentOpfPath = path.join(this.tempPath,"./OEBPS/content.opf");
+        this.contentOpfPath = path.join(this.tempPath,"./OEBPS/content.html");
         this.pagePath = path.join(this.tempPath,"./OEBPS/page/");
-        this.pageEjsPath = path.join(this.tempPath,"./OEBPS/page/page.ejs");
         // 当前内容
         this.content = [];
         // 初始化目录
@@ -65,7 +64,7 @@ export default class Epub extends Service {
         let self = this;
         return new Promise((ok)=>{
             cmd.get(
-                `cd ${this.copyPath}
+                `cd ${ path.join(this.copyPath, './template') }
                  cp -rf ./ ${this.tempPath}`,
                 function(err, data){
                     if (!err) {
@@ -100,20 +99,6 @@ export default class Epub extends Service {
         });
         fs.writeFileSync(this.contentOpfPath, contentOpf, {encoding: 'utf-8'})
     }
-
-    /**
-     * 处理页面
-     */
-    private page(){
-        //  把内容根据ejs渲染成html放到page里面
-        for(let i =0 ; i< this.content.length; i++){
-            let con = this.content[i];
-            let page = ejs.render(fs.readFileSync(this.pageEjsPath, 'utf-8'), {
-                data: con
-            });
-            fs.writeFileSync(path.join(this.pagePath,`./${i}.html`), page, {encoding: 'utf-8'})
-        }
-    }
     /**
      * 处理图片
      */
@@ -136,9 +121,10 @@ export default class Epub extends Service {
      * 打包成epub
      */
     private async zipCmd(){
+        let out = path.join(this.outPath,`./${this.name}.epub`);
         return new Promise((ok)=>{
             cmd.get(
-                `cd ${this.tempPath} && zip -0Xq  ${this.outPath}.epub mimetype && zip -Xr9Dq ${this.outPath}.epub *`,
+                `cd ${this.tempPath} && zip -0Xq  ${out} mimetype && zip -Xr9Dq ${out} *`,
                 function(err, data){
                     if (!err) {
                         console.log('the node-cmd zip dir contains these files :\n\n',data);

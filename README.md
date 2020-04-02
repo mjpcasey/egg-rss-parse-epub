@@ -35,7 +35,7 @@ $ open http://localhost:7001/
 - [x] 根据列表定时检查链接，查看博客是否更新（diff语法）
 - [x] 解析rss
 -  定时生产书籍
-   - js制作epub ： [](https://www.ibm.com/developerworks/cn/xml/tutorials/x-epubtut/index.html)
+   - js制作epub ： [教程](https://www.ibm.com/developerworks/cn/xml/tutorials/x-epubtut/index.html)
         - 打包zip, ncx,opf,css,xml,mimetype等文件
 - [x] 搭建lowdb
 > 接口

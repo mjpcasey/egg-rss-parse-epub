@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>222 Hello World: My First EPUB</title>
+    <link type="text/css" rel="stylesheet" media="all" href="stylesheet.css" />
+  </head>
+  <body>
+    <h1>目录</h1>
+    <p> <%- title %> </p>
+    <p> <%- dateStr %> </p>
+    <div style="height: 100%">
+      <% for(var i = 0; i < content.length; i++) {
+      %>
+        <p><a href="#<%- content[i].id %>"><%- content[i].title %></a></p>
+      <%
+        }
+      %>
+    </div>
+     <% for(var i = 0; i < content.length; i++) {
+     %>
+        <div id= "<%- content[i].id%>">
+                <h1><%- content[i].title %></h1>
+                <h2> author : <%- content[i].author || '未知' %></h2>
+                <p> 来源： <a href="<%- content[i].links %>"></a></p>
+                <div><%- content[i].content %></div>
+        </div>
+     <%
+      }
+      %>
+
+  </body>
+</html>
