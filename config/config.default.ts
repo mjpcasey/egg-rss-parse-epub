@@ -1,4 +1,5 @@
 import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg';
+import * as path from "path";
 
 export default (appInfo: EggAppInfo) => {
   const config = {} as PowerPartial<EggAppConfig>;
@@ -16,8 +17,9 @@ export default (appInfo: EggAppInfo) => {
   };
 
   config.static = {
-    prefix:'/public/dist/'
-  }
+    prefix: '/public/',
+    dir: [path.join(appInfo.baseDir, './web/src/main/')]// 多静态文件入口
+  };
   // the return config will combines to EggAppConfig
   return {
     ...config,

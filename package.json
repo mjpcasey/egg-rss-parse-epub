@@ -20,15 +20,7 @@
     "autod": "autod",
     "lint": "eslint . --ext .ts",
     "clean": "ets clean",
-    "init": "yarn install && cd web && yarn install",
-    "build": "cd web && cross-env NODE_ENV=production webpack --progress --config webpack.prod.js",
-    "stats": "cd web && cross-env NODE_ENV=production webpack --progress --config webpack.prod.js --json > stats.json",
-    "dll": "cd web && cross-env NODE_ENV=production webpack --config webpack.dll.js",
-    "devweb": "cd web && cross-env NODE_ENV=development webpack-dev-server --config webpack.dev.js --open",
-    "eslint": "cd web && eslint --ext .js --ext .jsx src/",
-    "eslint-fix": "cd web && eslint --fix --ext .js --ext src/",
-    "csslint": "cd web && stylelint src/**/*.scss",
-    "css-fix": "cd web && stylelint src/**/*.scss --fix"
+    "init": "yarn install && cd web && yarn install"
   },
   "dependencies": {
     "egg": "^2.6.1",
