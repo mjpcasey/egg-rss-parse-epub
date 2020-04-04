@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "rss2Epub",
+  "name": "rss epub",
   "icons": [
     {
       "src": "favicon.ico",

@@ -1,6 +1,6 @@
 import React from 'react';
-// 引入less
-import * as all from './style/app.less';
+// 引入scss
+import './style/app.scss';
 //导入组件
 import { Home } from "./router";
 //路由切换
@@ -19,7 +19,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
  * 3.children: 当children的值是一个函数时，无论当前地址和path路径匹不匹配，都将会执行children对应的函数
  */
 class App extends React.Component {
-  constructor(props: Readonly<{}>) {
+  constructor(props: any) {
     super(props);
   };
   state = {
@@ -39,14 +39,13 @@ class App extends React.Component {
       // return (<NotFound />)
     }
     return (
-        <div className="App">
+        <div className="AppCss">
           {/* <header>头部</header> */}
           <React.Suspense fallback={null}>
             <Router >
               <Switch>
                 <Route exact path="/" component= {Home} />
                 <Route path="/home" component= {Home} />
-                {/* <Route component={NotFound} /> */}
               </Switch>
             </Router>
           </React.Suspense >
