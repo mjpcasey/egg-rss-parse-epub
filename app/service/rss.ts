@@ -62,4 +62,7 @@ export default class Rss extends Service {
     /**
      *
      */
+    public async findByName(name:string){
+        return this.ctx.app.lowdb.model('links').find({name: name });
+    }
 }

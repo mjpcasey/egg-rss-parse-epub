@@ -72,11 +72,11 @@ class Home extends React.Component {
                             <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>
                                 {
                                     routes.map((route) =>
-                                        <Route exact key={route.key} path={route.link} component={route.component}/>)
+                                    <Route exact key={route.key} path={route.link} component={route.component}/>)
                                 }
                             </div>
                         </Content>
-                        <Footer style={{ textAlign: 'center' }}>Marker ©2019 Created by mjp</Footer>
+                        <Footer style={{ textAlign: 'center' }}>Marker ©2020.03 Created by mjp</Footer>
                     </Layout>
             </Router>
         )

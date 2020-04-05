@@ -23,7 +23,9 @@
     "init": "yarn install && cd web && yarn install"
   },
   "dependencies": {
+    "dataloader": "^2.0.0",
     "egg": "^2.6.1",
+    "egg-graphql": "^2.7.0",
     "egg-scripts": "^2.6.0",
     "ejs": "^3.0.2",
     "epub": "^1.2.0",

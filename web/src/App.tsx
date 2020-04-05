@@ -5,6 +5,8 @@ import './style/app.scss';
 import { Home } from "./router";
 //路由切换
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+// 引入redux
+import http from "./http/request";
 // 根组件
 /**
  * 渲染路由组件(根据需要修改)
@@ -21,6 +23,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 class App extends React.Component {
   constructor(props: any) {
     super(props);
+    props.http = http;
   };
   state = {
     isError: false

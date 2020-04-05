@@ -11,6 +11,11 @@ export default () => {
       timeout: 10000,
       app:true,
       agent:true
+    },
+    'security': {
+        csrf : {
+          enable: false,
+        }
     }
   };
 

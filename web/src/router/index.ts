@@ -11,7 +11,9 @@ export const Home = React.lazy(() => import('../pages/Home'));
 export const rssAdd = React.lazy(() => import('../pages/rss/add'));
 export const rssList = React.lazy(() => import('../pages/rss/list'));
 
-
+/**
+ *路由配置
+ */
 export const ROUTES = [
     {
         key: 'rssAdd',

@@ -42,12 +42,27 @@ $ open http://localhost:7001/
 - [] 在线阅读 epub 渲染到html里面可以阅读，或者发到邮件里去
 - [] 添加rss链接模块
 - [] 查看下载epub
-
-
+- [] graphql 搭建 [graphql](https://zhuanlan.zhihu.com/p/56516614)
+```
+├── graphql                       | graphql 代码
+│   ├── common                    | 通用类型定义
+│   │   ├── resolver.js           | 合并所有全局类型定义
+│   │   ├── scalars               | 自定义类型定义
+│   │   │   └── date.js           | 日期类型实现
+│   │   └── schema.graphql        | schema 定义
+│   ├── mutation                  | 所有的更新
+│   │   └── schema.graphql        | schema 定义
+│   ├── query                     | 所有的查询
+│   │   └── schema.graphql        | schema 定义
+│   └── user                      | 用户业务
+│       ├── connector.js          | 连接数据服务
+│       ├── resolver.js           | 类型实现
+│       └── schema.graphql        | schema 定义
+```
 
 ### 选型：
-- 前端：react + react-router +mobx + ant + axios
-- 后端：egg.js
+- 前端：react + react-router + graphql + ant + axios
+- 后端：egg.js + graphql+ts
 - 数据库：lowdb
 - docker , ks8部署
 

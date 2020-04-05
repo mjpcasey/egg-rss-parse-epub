@@ -8,6 +8,10 @@ const plugin: EggPlugin = {
     "rssParser":{
         enable:true,
         path: path.join(__dirname, '../lib/plugin/rssParser'),
+    },
+    "graphql":{
+        enable: true,
+        package: 'egg-graphql'
     }
 };
 

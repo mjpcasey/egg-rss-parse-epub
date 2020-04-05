@@ -1,0 +1,11 @@
+type Query {
+    rss(name: String): Rss
+}
+type Rss {
+    name: String
+    title: String!
+    link: String
+    enable: Boolean!
+    lastDate: String!
+}
+

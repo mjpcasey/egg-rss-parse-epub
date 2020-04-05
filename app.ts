@@ -1,10 +1,5 @@
 import { Application, IBoot } from 'egg';
-const next = require('next');
-const withSass = require('@zeit/next-sass');
-const nextApp = next({
-    dev:true,
-    ...withSass()
-})
+
 export default class FooBoot implements IBoot {
     private readonly app: Application;
     constructor(app: Application) {

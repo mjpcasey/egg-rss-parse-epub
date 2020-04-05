@@ -68,7 +68,7 @@ export default class Epub extends Service {
                  cp -rf ./ ${this.tempPath}`,
                 function(err, data){
                     if (!err) {
-                        self.logger.info('[]the node-cmd zip dir contains these files :\n\n',data);
+                        self.logger.info('[copy]the node-cmd zip dir contains these files :\n\n',data);
                         ok(data);
                     } else {
                         self.logger.error('error', err)
