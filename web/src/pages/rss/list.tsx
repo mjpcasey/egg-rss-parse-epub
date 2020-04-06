@@ -12,7 +12,7 @@ interface Props {
 interface State {
     data?: any[]
 }
-export default class content extends React.Component<Props,State> {
+export default class list extends React.Component<Props,State> {
     static defaultProps = {
         columns: [
             {
