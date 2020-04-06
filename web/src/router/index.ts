@@ -17,14 +17,14 @@ export const rssList = React.lazy(() => import('../pages/rss/list'));
 export const ROUTES = [
     {
         key: 'rssAdd',
-        link: '/home/rssAdd',
+        link: '#/home/rssAdd',
         iconType: 'icon-tuichu',
         text: 'rssAdd',
         component: rssAdd,
     },
     {
         key: 'rssList',
-        link: '/home/rssList',
+        link: '#/home/rssList',
         iconType: 'icon-twitter',
         text: 'rssList',
         component: rssList,

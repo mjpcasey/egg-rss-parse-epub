@@ -43,6 +43,8 @@ $ open http://localhost:7001/
 - [] 添加rss链接模块
 - [] 查看下载epub
 - [] graphql 搭建 [graphql](https://zhuanlan.zhihu.com/p/56516614)
+
+### graphql 
 ```
 ├── graphql                       | graphql 代码
 │   ├── common                    | 通用类型定义
@@ -60,9 +62,24 @@ $ open http://localhost:7001/
 │       └── schema.graphql        | schema 定义
 ```
 
+
 ### 选型：
-- 前端：react + react-router + graphql + ant + axios
-- 后端：egg.js + graphql+ts
+- 前端：react + react-router + graphql(集成 Apollo) + ant + axios
+- 后端：egg.js + graphql
 - 数据库：lowdb
 - docker , ks8部署
+
+
+### apollo
+    yarn add apollo-boost react-apollo graphql
+    https://tech.glowing.com/cn/add-graphql-to-react-with-apollo/
+    apollo-boost 包含了下面这些 packages
+    apollo-client：Apollo 的所有操作都从这里开始，提供了丰富的 API
+    apollo-cache-inmemory: Apollo 提供的 Cache
+    apollo-link-http: Apollo 用来和 Server 端通信
+    apollo-link-error: Apollo Client 内部错误处理
+    apollo-link-state: 本地状态管理
+    graphql-tag: 提供 gql 方法，方便定义 queries 和 mutations
+    react-apollo: 连接 Apollo 和 React 的 UI 组件
+    graphql: 分析和检查我们写的 query string
 
