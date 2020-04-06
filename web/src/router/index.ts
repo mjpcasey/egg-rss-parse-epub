@@ -8,25 +8,32 @@ import React from 'react';
  * 首页
  */
 export const Home = React.lazy(() => import('../pages/Home'));
+export const hello = React.lazy(() => import('../pages/Home/hello'));
 export const rssAdd = React.lazy(() => import('../pages/rss/add'));
 export const rssList = React.lazy(() => import('../pages/rss/list'));
-
 /**
  *路由配置
  */
 export const ROUTES = [
     {
-        key: 'rssAdd',
-        link: '#/home/rssAdd',
+        key: 'home',
+        link: '/',
         iconType: 'icon-tuichu',
-        text: 'rssAdd',
+        text: '首页',
+        component: hello,
+    },
+    {
+        key: 'rssAdd',
+        link: '/home/rssAdd',
+        iconType: 'icon-tuichu',
+        text: '订阅博客',
         component: rssAdd,
     },
     {
         key: 'rssList',
-        link: '#/home/rssList',
+        link: '/home/rssList',
         iconType: 'icon-twitter',
-        text: 'rssList',
+        text: '查看博客',
         component: rssList,
     }
 ];

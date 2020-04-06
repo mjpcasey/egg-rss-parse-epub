@@ -1,7 +1,7 @@
 import React, { Component, useState} from 'react';
 import PropTypes from "prop-types";
 import { Layout, Menu, Breadcrumb} from 'antd';
-import {BrowserRouter as Router, Route , Link} from "react-router-dom";
+import {HashRouter as Router, Route , Link} from "react-router-dom";
 import {ROUTES} from "../../router";
 import _ from "lodash";
 import 'antd/dist/antd.css';

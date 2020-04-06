@@ -5,6 +5,7 @@ import './style/app.scss';
 import { Home } from "./router";
 //路由切换
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+// 引入redux
 // 根组件
 /**
  * 渲染路由组件(根据需要修改)
@@ -44,8 +45,8 @@ class App extends React.Component {
           <React.Suspense fallback={null}>
             <Router >
               <Switch>
-                <Route exact path="/" component= {Home} />
-                <Route path="/home" component= {Home} />
+                <Route  path="/" component= {Home} />
+                <Route exact path="/home" component= {Home} />
               </Switch>
             </Router>
           </React.Suspense >
