@@ -8,7 +8,7 @@ ts+egg+rss+cmd+ejs+react+ant
 ```bash
 $ npm run init
 $ npm run dev
-$ npm run devweb
+$ cd web && npm run start
 $ open http://localhost:7001/
 ```
 ### Requirement
